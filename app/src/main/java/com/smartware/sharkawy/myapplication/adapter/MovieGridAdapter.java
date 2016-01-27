@@ -90,6 +90,7 @@ public class MovieGridAdapter extends BaseAdapter {
         viewHolder.titleView.setText(movie.getTitle());
 
         Toast.makeText(mContext,"bazinga",Toast.LENGTH_SHORT).show();
+
         return convertView;
     }
 
