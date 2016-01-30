@@ -10,7 +10,7 @@ import android.provider.BaseColumns;
  */
 public class MovieContract {
 
-    public static final String CONTENT_AUTHORITY = "com.smartware.sharkawy.movieapp_v10";
+    public static final String CONTENT_AUTHORITY = "com.smartware.sharkawy.myapplication";
 
     public static final Uri BASE_CONTENT_URI = Uri.parse("content://" + CONTENT_AUTHORITY);
 

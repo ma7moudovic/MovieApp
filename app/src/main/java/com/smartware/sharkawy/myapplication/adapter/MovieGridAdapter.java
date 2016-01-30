@@ -13,6 +13,8 @@ import com.smartware.sharkawy.myapplication.R;
 import com.smartware.sharkawy.myapplication.model.Movie;
 import com.squareup.picasso.Picasso;
 
+import org.json.JSONException;
+
 import java.util.List;
 
 /**
@@ -75,21 +77,39 @@ public class MovieGridAdapter extends BaseAdapter {
         View view = convertView;
         ViewHolder viewHolder;
 
-        if (view == null) {
-            view = mInflater.inflate(R.layout.movie_item, parent, false);
-            viewHolder = new ViewHolder(view);
-            view.setTag(viewHolder);
+//        ImageView imageView = new ImageView(mContext);
+//        if(convertView==null){
+//
+//        } else {
+//            imageView = (ImageView) convertView;
+//        }
+//
+//
+//            final Movie movie = (Movie) getItem(position);
+//
+//            String image_url = "http://image.tmdb.org/t/p/w185" + movie.getImage_path();
+//
+//            viewHolder = (ViewHolder) view.getTag();
+//
+//            Picasso.with(getmContext()).load(image_url).into(imageView);
+//
+//        return imageView;
+
+        if (convertView == null) {
+            convertView = mInflater.inflate(R.layout.movie_item, parent, false);
+            viewHolder = new ViewHolder(convertView);
+            convertView.setTag(viewHolder);
         }
         final Movie movie = (Movie) getItem(position);
 
         String image_url = "http://image.tmdb.org/t/p/w185" + movie.getImage_path();
 
-        viewHolder = (ViewHolder) view.getTag();
+        viewHolder = (ViewHolder) convertView.getTag();
 
         Picasso.with(getmContext()).load(image_url).into(viewHolder.imageView);
         viewHolder.titleView.setText(movie.getTitle());
 
-        Toast.makeText(mContext,"bazinga",Toast.LENGTH_SHORT).show();
+//        Toast.makeText(mContext,"bazinga",Toast.LENGTH_SHORT).show();
 
         return convertView;
     }
